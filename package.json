@@ -1,0 +1,20 @@
+{
+  "name": "interview_preparation",
+  "version": "1.0.0",
+  "description": "this repository is for  summary of interview in the future",
+  "main": "Promise_es5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengzi2016/Interview_preparation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fengzi2016/Interview_preparation/issues"
+  },
+  "homepage": "https://github.com/fengzi2016/Interview_preparation#readme",
+  "dependencies": {}
+}
