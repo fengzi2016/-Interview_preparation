@@ -30,4 +30,3 @@ FileListPlugin.prototype.apply = function(compiler){
     })
 };
 module.exports = FileListPlugin;
-
