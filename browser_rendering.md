@@ -28,6 +28,19 @@
       -  ImageAlpha
       - File Optimizer (Windows, Linux) 
 - [网站测试](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fwww.muxixyz.com&tab=desktop)
+
+- 各种[Unicode字符](https://unicode-table.com/cn/#20BE)
+- 各种[图标](https://fontawesome.com/get-started),[Fonts](http://weloveiconfonts.com/),[如何](https://css-tricks.com/examples/IconFont/)使用图标
+- scrset , size(原图片宽度)
+ 例子:
+ 
+  ```html
+    <img  
+      src="images/great_pic_800.jpg"
+      sizes="(max-width: 400px) 100vw, (min-width: 401px) 50vw"
+      srcset="images/great_pic_400.jpg 400w, images/great_pic_800.jpg 800w"
+      alt="great picture">
+  ```
 ## HTTP缓存
 
 **[参考链接](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control)**
