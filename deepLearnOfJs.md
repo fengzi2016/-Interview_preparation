@@ -190,7 +190,7 @@ a.fn(1,2);
 ### 6.
 TODO，箭头函数MDN
 
- 箭头函数无this,在函数里创建则指向函数，在对象里被创建则被指向window或undefined(严格模式)
+ 箭头函数无自己的this,super,arguments,super,new.target,在函数里创建则指向函数，在对象里被创建则被指向window或undefined(严格模式)
 ```js
  const a = () => {
    console.log(this)

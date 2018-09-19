@@ -1,4 +1,13 @@
-
+const a = (a,b) => {
+    console.log('this:');
+    console.log(this)
+    console.log('arguments:')
+    console.log(arguments[0])
+    
+    console.log("target")
+    console.log(new.target)
+}
+a(2,3)
 // function a() {
     
 //     console.log(this);
