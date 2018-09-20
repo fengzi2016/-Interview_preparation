@@ -187,16 +187,33 @@ a.fn(1,2);
   // this->window
   
 ```
-### 6.
-TODO，箭头函数MDN
+### 6.箭头函数MDN
 
- 箭头函数无自己的this,super,arguments,super,new.target,在函数里创建则指向函数，在对象里被创建则被指向window或undefined(严格模式)
+- 箭头函数不会创建自己的this,它只会从自己的作用域链的上一层继承this
+- 没有super,arguments,new.target
+- 不能被new
+- 不应该作为对象方法。如不应该作为object.defineProperty(obj,prop,{})的第三个参数，因为在对象里被创建则被指向window或undefined(严格模式)
+- 通过call,apply,bind调用时，其第一个参数会被被忽略，当作参数传递。
+
+## 继承
+
 ```js
- const a = () => {
-   console.log(this)
- }
- //
+ //1.
+ Child.prototype = new Parent();
+ //2.
+function Child() {
+  Parent.call(this,'x')
+}
+Child.prototype = new Parent();
+
+//3. 
+function Child() {
+  Parent.call(this,'x');
+}
+Child.prototype = new Parent();
+Child.prototype.constructor = Parent;
 ```
+
 # little
 
 - call和apply的功能基本相同，都是实现继承或者转换对象指针的作用；

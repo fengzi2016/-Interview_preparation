@@ -1,13 +1,33 @@
-const a = (a,b) => {
-    console.log('this:');
-    console.log(this)
-    console.log('arguments:')
-    console.log(arguments[0])
-    
-    console.log("target")
-    console.log(new.target)
+function Parent() {
+    this.prototype = true;
 }
-a(2,3)
+Parent.prototype.getParentValue = function() {
+    return this.prototype;
+}
+function Child() {
+    this.ChildProperty = false;
+}
+Child.prototype = new Parent();
+Child.prototype.getChildValue = function() {
+    return this.ChildProperty;
+}
+let child = new Child();
+console.log(child.getChildValue());
+console.log(child.getParentValue());
+
+
+
+
+// const a = (a,b) => {
+//     console.log('this:');
+//     console.log(this)
+//     console.log('arguments:')
+//     console.log(arguments[0])
+    
+//     console.log("target")
+//     console.log(new.target)
+// }
+// a(2,3)
 // function a() {
     
 //     console.log(this);
