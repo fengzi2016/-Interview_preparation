@@ -214,6 +214,89 @@ Child.prototype = new Parent();
 Child.prototype.constructor = Parent;
 ```
 
+## 正则表达式
+1. 表现形式
+```js
+//1
+  var regexp = /ab/gi;
+  var myArray = regexp.exec('abc');
+//2
+  var re = new RegExp('ab','gi'),;
+  var arr = re.exec('abc')
+//3
+  var str = 'abc'
+  var a = str.match(regexp)
+```
+regexp.lastIndex = 下一个匹配的索引值
+
+regexp.source = 正则表达式，不包括标志
+
+**RegExp.exec(str)**得出的结果：
+
+myArray = [匹配到的字符串，所有被记住的子串]
+
+myArray.index = 在输入的字符串中匹配到的以0开始的索引（匹配到的字符串的起始下标）
+
+myArray.input = 初始字符串
+
+myArray[0] = 匹配到的字符串
+
+- \ 转义
+- ^ 开始
+- $ 结尾
+- * >=0
+- + >=1
+- ? 非贪婪
+- . 一切除换行符
+- (x) 匹配'x'且记住匹配项，捕获符号，匹配用\1,\2..，替换用$1,$2..表示
+- (?:x) 匹配'x'但是不记住x,用于匹配字符串
+- x(?=y) 匹配'x'后面跟着y
+- x(?!y) 匹配x后面不跟着y
+- x|y 匹配x或y
+- {n} 正好为n个
+- {n.m} n至m个
+- [xyz] 匹配其中之一
+- [^xyz]匹配除了括号中的
+- [\b] 退格
+- \b 边界
+- \B 非边界
+- \cX 当X处于A-Z 匹配一个控制符，如-
+- \d 数字
+- \D 非数字
+- \f 换页符
+- \n 换行符
+- \s 空白符号
+- \S 非空白符
+- \t 水平制表符
+- \v 垂直制表符
+- \w 字母，数字，或下划线
+- \W 非字母数字，下划线
+
+
+## 网页的生命周期
+### 1.
+1. HTML代码转化成DOM
+2. CSS代码转化成CSSOM（CSS Object Model）
+3. 结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）
+4. 生成布局（layout），即将所有渲染树的所有节点进行平面合成
+5. 将布局绘制（paint）在屏幕上
+
+### 2.
+- 下载html
+- 根据html里的标签进行解析，发现并下载CSS,JS等其它资源（边解析边下载）
+- 解析html时建立DOM树。CSS下载完成，解析CSS样式，定义html标签相关联样式，创建样式对象styleObject
+>1、解析HTML以构建DOM树：渲染引擎开始解析HTML文档，转换树中的html标签或js生成的标签到DOM节点，它被称为 -- 内容树。
+
+>2、构建渲染树：解析CSS（包括外部CSS文件和样式元素以及js生成的样式），根据CSS选择器计算出节点的样式，创建另一个树 —- 渲染树。
+
+>3、布局渲染树: 从根节点递归调用，计算每一个元素的大小、位置等，给每个节点所应该出现在屏幕上的精确坐标。
+
+>4、绘制渲染树: 遍历渲染树，每个节点将使用UI后端层来绘制。
+- DOM tree ，样式对象构建完毕，建立渲染树。渲染树！=DOM树，比如display:none则不在渲染树中，
+- reflow:由浏览器的定位引擎计算每个DOM项的大小及相对于整个页面的位置
+- repaint:显示整个页面，这个工作是浏览器的绘画引擎完成，显示整个最终的效果
+
+
 # little
 
 - call和apply的功能基本相同，都是实现继承或者转换对象指针的作用；

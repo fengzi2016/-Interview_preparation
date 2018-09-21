@@ -15,6 +15,14 @@ let child = new Child();
 console.log(child.getChildValue());
 console.log(child.getParentValue());
 
+var names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ; Chris Hand ";
+var output = ["---------- Original String\n", names + "\n"];
+var pattern = /\s*;\s*/
+var nameList = names.split(pattern);
+pattern = /(\w+)\s+(\w+)/
+var bySurnameList = [];
+bySurnameList.sort();
+nameList[0].replace(pattern,"$2","$1");
 
 
 
