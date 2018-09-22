@@ -296,7 +296,56 @@ myArray[0] = 匹配到的字符串
 - reflow:由浏览器的定位引擎计算每个DOM项的大小及相对于整个页面的位置
 - repaint:显示整个页面，这个工作是浏览器的绘画引擎完成，显示整个最终的效果
 
+## Date
+```js
+  
+// 显示为毫秒
+//类
+Date.now();
+Date.UTC(year,month,day,hour,m,s,ms);
+Date.parse(instance);
+Date.parse(year,month,day,hour,m,s,ms)
+
+// 实例
+let date = new Date();
+
+//2018-09-22T10:11:15.136Z
+date.getTime();
+date.setTime();
+
+// 显示为字符串或数字
+
+// 实例
+let newdate = new Date();
+//构造函数
+newdate = new Date(123);
+newdate = new Date('December 17, 1995 03:24:00');
+newdate = new Date('1998-12-17T03:24:00');
+newdate = new Date(1995,11,17,3,24,0);
+date.getDay();
+date.getDate();
+date.getFullYear();
+date.getHours();
+date.getMilliseconds();
+date.getMinutes();
+date.getMonth();
+date.getSeconds();
+date.getUTCDate();
+//get -> set
+date.toDateString();
+//Mon Jan 22 2018
+date.toJSON();
+// 2018-01-22T10:00:33.381Z
+date.toTimeString();
+// 18:00:33 GMT+0800 (中国标准时间)
+date.toString()
+// Sat Sep 22 2018 18:11:00 GMT+0800 (中国标准时间)
+```
+
+
 
 # little
 
 - call和apply的功能基本相同，都是实现继承或者转换对象指针的作用；
+
+
